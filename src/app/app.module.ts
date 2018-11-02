@@ -8,7 +8,8 @@ import {AppRoutingModule} from './app-routing.module';
 import {HomeComponent} from './home/home.component';
 import {DropdownDirective} from './utils/dropdown.directive';
 import {ErrorPageComponent} from './error-page/error-page.component';
-import { TableComponent } from './table/table.component';
+import {TableComponent} from './table/table.component';
+import {RowsService} from './table/rows.service';
 
 @NgModule({
     declarations: [
@@ -24,7 +25,7 @@ import { TableComponent } from './table/table.component';
         BrowserModule,
         AppRoutingModule,
     ],
-    providers: [],
+    providers: [RowsService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
