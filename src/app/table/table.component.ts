@@ -6,7 +6,7 @@ import {RowsService} from './rows.service';
 @Component({
     selector: 'app-table',
     templateUrl: './table.component.html',
-    styleUrls: ['./table.component.css']
+    styleUrls: []
 })
 export class TableComponent implements OnInit {
     rows: Row[];
