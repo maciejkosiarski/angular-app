@@ -1,3 +1,5 @@
+<app-alert></app-alert>
+
 <div class="table-responsive">
     <table class="table">
         <thead class="thead-light">
@@ -13,33 +15,29 @@
         </tr>
         </thead>
         <tbody>
+            <tr *ngFor="let row of rows;" class="{{ row.active ? 'table-primary' : 'table-secondary' }}">
+                <td>{{ row.type }}</td>
+                <!--<td>{{ notification.message|slice(0, 20) }}{% if notification.message|length > 20 %}...{% endif %}</td>-->
+                <td>{{ row.message }}</td>
+                <!--<td>-->
+                    <!--<a href="{{ path('notification_toggle_active', {'id': notification.id}) }}">-->
+                        <!--{{ notification.active ? 'Yes' : 'No' }}-->
+                    <!--</a>-->
+                <!--</td>-->
+                <td>{{ row.active }}</td>
+                <!--<td>-->
+                    <!--<a href="{{ path('notification_toggle_recurrent', {'id': notification.id}) }}">-->
+                        <!--{{ notification.recurrent ? 'Yes' : 'No' }}-->
+                    <!--</a>-->
+                <!--</td>-->
+                <td>{{ row.recurrent }}</td>
+                <td>{{ row.nextRun}}</td>
+                <td>{{ row.createdAt}}</td>
+            </tr>
 
-
-
-        <tr *ngFor="let row of rows;" class="{{ row.active ? 'table-primary' : 'table-secondary' }}">
-            <td>{{ row.type }}</td>
-            <!--<td>{{ notification.message|slice(0, 20) }}{% if notification.message|length > 20 %}...{% endif %}</td>-->
-            <td>{{ row.message }}</td>
-            <!--<td>-->
-                <!--<a href="{{ path('notification_toggle_active', {'id': notification.id}) }}">-->
-                    <!--{{ notification.active ? 'Yes' : 'No' }}-->
-                <!--</a>-->
-            <!--</td>-->
-            <td>{{ row.active }}</td>
-            <!--<td>-->
-                <!--<a href="{{ path('notification_toggle_recurrent', {'id': notification.id}) }}">-->
-                    <!--{{ notification.recurrent ? 'Yes' : 'No' }}-->
-                <!--</a>-->
-            <!--</td>-->
-            <td>{{ row.recurrent }}</td>
-            <td>{{ row.nextRun}}</td>
-            <td>{{ row.createdAt}}</td>
-        </tr>
-
-        <tr *ngIf="rows.length === 0">
-            <td colspan="6">No rows found</td>
-        </tr>
-
+            <tr *ngIf="rows.length === 0">
+                <td colspan="6">No rows found</td>
+            </tr>
         </tbody>
     </table>
 </div>

@@ -10,6 +10,8 @@ import {DropdownDirective} from './utils/dropdown.directive';
 import {ErrorPageComponent} from './error-page/error-page.component';
 import {TableComponent} from './table/table.component';
 import {RowsService} from './table/rows.service';
+import {AlertComponent} from './alert/alert.component';
+import {AlertsService} from './alert/alerts.service';
 
 @NgModule({
     declarations: [
@@ -20,12 +22,16 @@ import {RowsService} from './table/rows.service';
         NavbarComponent,
         ErrorPageComponent,
         TableComponent,
+        AlertComponent,
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
     ],
-    providers: [RowsService],
+    providers: [
+        RowsService,
+        AlertsService,
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {
