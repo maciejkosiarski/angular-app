@@ -1,8 +1,5 @@
-import {Injectable} from '@angular/core';
-
 import {Row} from './row.model';
 
-@Injectable()
 export class RowsService {
     private rows: Row[] = [
         new Row(

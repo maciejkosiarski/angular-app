@@ -13,7 +13,7 @@ export class AlertsService {
         this.alerts.push(new Alert(type, message));
     }
 
-    clear() {
+    clearAlerts() {
         this.alerts = [];
     }
 }
