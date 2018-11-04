@@ -8,7 +8,7 @@ export class RowsService {
             false,
             true,
             1541174129,
-            1541170000,
+            1,
             ),
         new Row(
             'Sms',
@@ -16,7 +16,7 @@ export class RowsService {
             true,
             false,
             1541174129,
-            1541170000,
+            2,
         ),
         new Row(
             'Skype',
@@ -24,14 +24,90 @@ export class RowsService {
             true,
             true,
             1541174129,
-            1541170000,
+            3,
+        ),
+        new Row(
+            'Sms',
+            'Fake sms message',
+            true,
+            false,
+            1541174129,
+            4,
+        ),
+        new Row(
+            'Skype',
+            'Fake skype message',
+            true,
+            true,
+            1541174129,
+            5,
+        ),
+        new Row(
+            'Email',
+            'Fake email message',
+            false,
+            true,
+            1541174129,
+            6,
+        ),
+        new Row(
+            'Sms',
+            'Fake sms message',
+            true,
+            false,
+            1541174129,
+            7,
+        ),
+        new Row(
+            'Skype',
+            'Fake skype message',
+            true,
+            true,
+            1541174129,
+            8,
+        ),
+        new Row(
+            'Email',
+            'Fake email message',
+            false,
+            true,
+            1541174129,
+            9,
+        ),
+        new Row(
+            'Sms',
+            'Fake sms message',
+            true,
+            false,
+            1541174129,
+            10,
+        ),
+        new Row(
+            'Skype',
+            'Fake skype message',
+            true,
+            true,
+            1541174129,
+            11,
+        ),
+        new Row(
+            'Email',
+            'Fake email message',
+            false,
+            true,
+            1541174129,
+            12,
         ),
     ];
 
     constructor() {}
 
-    getRows() {
-        return this.rows.slice();
+    getRows(limit: number, start = 0) {
+        return this.rows.slice(start, (start + limit));
+    }
+
+    countRows() {
+        return this.rows.length;
     }
 
     getRow(id: number) {

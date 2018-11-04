@@ -1,5 +1,12 @@
 <app-alert></app-alert>
 
+<app-pagination
+        *ngIf="allRows > rowsPerPage"
+        [all]="allRows"
+        [pageSize]="rowsPerPage"
+        (pageSize)="changePageSize($event)"
+        (pageChanged)="changePage($event)"></app-pagination>
+
 <div class="table-responsive">
     <table class="table">
         <thead class="thead-light">
@@ -15,7 +22,7 @@
         </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let row of rows;" class="{{ row.active ? 'table-primary' : 'table-secondary' }}">
+            <tr *ngFor="let row of rowsToShow;" class="{{ row.active ? 'table-primary' : 'table-secondary' }}">
                 <td>{{ row.type }}</td>
                 <!--<td>{{ notification.message|slice(0, 20) }}{% if notification.message|length > 20 %}...{% endif %}</td>-->
                 <td>{{ row.message }}</td>
@@ -35,7 +42,7 @@
                 <td>{{ row.createdAt}}</td>
             </tr>
 
-            <tr *ngIf="rows.length === 0">
+            <tr *ngIf="rowsToShow.length === 0">
                 <td colspan="6">No rows found</td>
             </tr>
         </tbody>

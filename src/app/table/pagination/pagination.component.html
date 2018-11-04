@@ -1,0 +1,12 @@
+<ngb-pagination
+        [collectionSize]="all"
+        [(page)]="currentPage"
+        [pageSize]="pageSize"
+        [maxSize]="5"
+        [rotate]="true"
+        [ellipses]="false"
+        [boundaryLinks]="true"
+        [directionLinks]="true"
+        aria-label="Default pagination"
+        (pageChange)="pageChange($event)"
+></ngb-pagination>
