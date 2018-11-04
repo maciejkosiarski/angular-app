@@ -12,6 +12,8 @@ import {TableComponent} from './table/table.component';
 import {RowsService} from './table/rows.service';
 import {AlertsComponent} from './alerts/alerts.component';
 import {AlertsService} from './alerts/alerts.service';
+import {NgbAlertModule, NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
+import {PaginationComponent} from './table/pagination/pagination.component';
 
 @NgModule({
     declarations: [
@@ -23,10 +25,13 @@ import {AlertsService} from './alerts/alerts.service';
         ErrorPageComponent,
         TableComponent,
         AlertsComponent,
+        PaginationComponent,
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
+        NgbAlertModule,
+        NgbPaginationModule,
     ],
     providers: [
         RowsService,

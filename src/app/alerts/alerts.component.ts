@@ -18,4 +18,7 @@ export class AlertsComponent implements OnInit {
         this.service.clearAlerts();
     }
 
+    close(alert: Alert) {
+        this.alerts.splice(this.alerts.indexOf(alert), 1);
+    }
 }
