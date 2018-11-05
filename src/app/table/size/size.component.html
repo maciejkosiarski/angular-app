@@ -1,0 +1,10 @@
+<div class="btn-group">
+    <span class="btn btn-outline-primary disabled">Per page</span>
+    <button
+            *ngFor="let size of sizes"
+            class="btn btn-outline-primary"
+            [class.disabled]="currentSize === size"
+            (click)="sizeChange(size)"
+    >{{ size }}</button>
+</div>
+

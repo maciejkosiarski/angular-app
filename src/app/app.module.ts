@@ -14,6 +14,7 @@ import {AlertsComponent} from './alerts/alerts.component';
 import {AlertsService} from './alerts/alerts.service';
 import {NgbAlertModule, NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
 import {PaginationComponent} from './table/pagination/pagination.component';
+import {SizeComponent} from './table/size/size.component';
 
 @NgModule({
     declarations: [
@@ -26,6 +27,7 @@ import {PaginationComponent} from './table/pagination/pagination.component';
         TableComponent,
         AlertsComponent,
         PaginationComponent,
+        SizeComponent,
     ],
     imports: [
         BrowserModule,
