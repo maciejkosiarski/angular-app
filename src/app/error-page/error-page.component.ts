@@ -13,6 +13,6 @@ export class ErrorPageComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.errorMessage = this.route.snapshot.data['message'];
+        this.errorMessage = this.route.snapshot.data['description'];
     }
 }
