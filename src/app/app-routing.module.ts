@@ -4,11 +4,12 @@ import {RouterModule, Routes} from '@angular/router';
 import {CompaniesComponent} from './companies/companies.component';
 import {HomeComponent} from './home/home.component';
 import {ErrorPageComponent} from './error-page/error-page.component';
-import {TableComponent} from './table/table.component';
+import {DefaultTableComponent} from './default-table/default-table.component';
 
 const appRoutes: Routes = [
     {path: '', redirectTo: '/', pathMatch: 'full'},
     {path: '', component: HomeComponent},
+    {path: 'table', component: DefaultTableComponent},
     {
         path: 'companies', component: CompaniesComponent,
         // children: [
@@ -18,10 +19,7 @@ const appRoutes: Routes = [
         //     {path: ':id/edit', component: RecipeEditComponent},
         // ]
     },
-    {path: 'table', component: TableComponent},
-    // {path: 'shopping-list', component: ShoppingListComponent},
-    // {path: 'not-found', component: ErrorPageComponent, data: {message: 'Page not found'}},
-    {path: 'not-found', component: ErrorPageComponent, data: {message: 'Page was not found'}},
+    {path: 'not-found', component: ErrorPageComponent, data: {description: 'Page was not found'}},
     {path: '**', redirectTo: 'not-found'}
 ];
 

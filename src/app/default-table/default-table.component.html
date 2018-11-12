@@ -1,0 +1,37 @@
+<app-alert></app-alert>
+
+<app-pagination
+        class="float-left"
+        *ngIf="allRows > rowsPerPage"
+        [all]="allRows"
+        [pageSize]="rowsPerPage"
+        (pageSize)="changePageSize($event)"
+        (pageChanged)="changePage($event)"></app-pagination>
+
+
+<app-size
+        class="float-right"
+        (sizeChanged)="changePageSize($event)"></app-size>
+
+<div class="table-responsive">
+  <table class="table">
+    <thead class="thead-light">
+    <tr>
+      <th *ngFor="let header of headers;">{{ header }}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let row of rowsToShow;" class="{{ row.active ? 'table-primary' : 'table-secondary' }}">
+      <td>{{ row.id }}</td>
+      <td>{{ row.type }}</td>
+      <td>{{ row.description }}</td>
+      <td>{{ row.active }}</td>
+      <td>{{ row.createdAt}}</td>
+    </tr>
+
+    <tr *ngIf="rowsToShow.length === 0">
+      <td colspan="6">No rows found</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
