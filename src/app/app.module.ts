@@ -17,6 +17,7 @@ import {SizeComponent} from './table/size/size.component';
 import {CompaniesService} from './companies/companies.service';
 import {DefaultTableComponent} from './default-table/default-table.component';
 import {DefaultRowsService} from './default-table/default-rows.service';
+import {FilterComponent} from './table/filter/filter.component';
 
 @NgModule({
     declarations: [
@@ -30,6 +31,7 @@ import {DefaultRowsService} from './default-table/default-rows.service';
         PaginationComponent,
         SizeComponent,
         DefaultTableComponent,
+        FilterComponent,
     ],
     imports: [
         BrowserModule,
