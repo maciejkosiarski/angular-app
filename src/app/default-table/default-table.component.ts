@@ -18,7 +18,10 @@ export class DefaultTableComponent extends TableAbstract implements OnInit {
     ngOnInit() {
         this.allRows = this.service.countRows();
         this.showRows();
-        this.setHeaders();
+        this.removeHeader('Created At');
+        this.addHeader( 'Created', 5);
+        this.removeFilter('Id');
+        this.addFilter('Id number', 0);
     }
 
     setHeaders(): void {

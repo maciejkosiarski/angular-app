@@ -1,15 +1,14 @@
 <app-alert></app-alert>
 
-<app-filter></app-filter>
+<app-filter
+        [filters]="filters"></app-filter>
 
 <app-pagination
         class="float-left"
         *ngIf="allRows > rowsPerPage"
         [all]="allRows"
         [pageSize]="rowsPerPage"
-        (pageSize)="changePageSize($event)"
         (pageChanged)="changePage($event)"></app-pagination>
-
 
 <app-size
         class="float-right"
