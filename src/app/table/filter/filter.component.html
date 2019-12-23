@@ -1,12 +1,12 @@
 <form (keydown.enter)="$event.preventDefault()">
     <div class="row">
-        <div *ngFor="let filter of filters" class="form-group col-lg-3 col-md-4 col-sm-6">
-            <input type="text" name="{{ filter }}" class="form-control" placeholder="{{ filter }}">
+        <div *ngFor="let filter of filters | keyvalue" class="form-group col-lg-3 col-md-4 col-sm-6">
+            <input type="text" name="{{ filter.key }}" value="" (keyup)="OnInput($event)" class="form-control" placeholder="{{ filter.key }}">
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <button type="submit" class="btn btn-success float-right" (click)="filter()">Filter</button>
+            <button type="submit" class="btn btn-success float-right" (click)="filter($event)">Filter</button>
         </div>
     </div>
     <hr>

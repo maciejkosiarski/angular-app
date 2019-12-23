@@ -1,7 +1,8 @@
 <app-alert></app-alert>
 
 <app-filter
-        [filters]="filters"></app-filter>
+        [filters]="filters"
+        (filtered)="$event"></app-filter>
 
 <app-pagination
         class="float-left"

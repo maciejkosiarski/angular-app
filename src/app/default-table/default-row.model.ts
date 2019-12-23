@@ -22,6 +22,6 @@ export class DefaultRowModel implements RowInterface {
     }
 
     getHeaders() {
-        return Object.keys(this);
+        return Object.getOwnPropertyNames(this);
     }
 }

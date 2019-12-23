@@ -153,7 +153,7 @@ export class DefaultRowsService {
 
     constructor() {}
 
-    getRows(limit: number, start = 0): DefaultRowModel[] {
+    getRows(limit: number, start = 0, filters = {}): DefaultRowModel[] {
         return this.rows.slice(start, (start + limit));
     }
 

@@ -14,7 +14,7 @@ import {AlertsComponent} from './alerts/alerts.component';
 import {AlertsService} from './alerts/alerts.service';
 import {PaginationComponent} from './table/pagination/pagination.component';
 import {SizeComponent} from './table/size/size.component';
-import {CompaniesService} from './companies/companies.service';
+// import {CompaniesService} from './companies/companies.service';
 import {DefaultTableComponent} from './default-table/default-table.component';
 import {DefaultRowsService} from './default-table/default-rows.service';
 import {FilterComponent} from './table/filter/filter.component';
@@ -41,7 +41,7 @@ import {FilterComponent} from './table/filter/filter.component';
     ],
     providers: [
         AlertsService,
-        CompaniesService,
+        // CompaniesService,
         DefaultRowsService,
     ],
     bootstrap: [AppComponent]
